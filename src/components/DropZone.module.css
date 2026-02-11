@@ -1,0 +1,73 @@
+.zone {
+  position: relative;
+  border: 1.5px dashed rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  padding: 56px 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  background: rgba(255, 255, 255, 0.01);
+  overflow: hidden;
+  animation: slideUp 0.5s ease 0.1s both;
+  margin-bottom: 24px;
+}
+
+.zone::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xl);
+  background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.03), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none;
+}
+
+.zone:hover {
+  border-color: rgba(0, 212, 255, 0.25);
+}
+
+.zone:hover::before {
+  opacity: 1;
+}
+
+.dragging {
+  border-color: rgba(0, 255, 163, 0.4) !important;
+  background: rgba(0, 255, 163, 0.03);
+  animation: borderGlow 2s ease infinite;
+}
+
+.dragging::before {
+  opacity: 1 !important;
+}
+
+.input {
+  display: none;
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  border-radius: var(--radius-lg);
+  background: rgba(0, 212, 255, 0.06);
+  border: 1px solid rgba(0, 212, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: float 4s ease-in-out infinite;
+}
+
+.label {
+  color: #ccc;
+  font-size: 15px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.hint {
+  color: var(--text-dim);
+  font-size: 12px;
+  font-family: var(--font-mono);
+}

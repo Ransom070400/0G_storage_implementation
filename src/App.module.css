@@ -1,0 +1,82 @@
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.fileList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.3px;
+}
+
+.btnUpload {
+  background: var(--gradient-brand);
+  color: var(--bg);
+}
+
+.btnUpload:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 30px rgba(0, 212, 255, 0.25);
+}
+
+.btnUpload:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btnGhost {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.btnGhost:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.07);
+  color: #aaa;
+}
+
+.btnGhost:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.spinIcon {
+  animation: spin 1s linear infinite;
+}
+
+.empty {
+  text-align: center;
+  padding: 32px 0;
+  color: var(--text-ghost);
+  font-size: 12px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.5px;
+  animation: slideUp 0.5s ease 0.2s both;
+}

@@ -1,0 +1,271 @@
+.wrapper {
+  position: relative;
+}
+
+/* ── Connect Button ── */
+
+.connectBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(0, 212, 255, 0.06);
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.connectBtn:hover:not(:disabled) {
+  background: rgba(0, 212, 255, 0.1);
+  border-color: rgba(0, 212, 255, 0.35);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.08);
+}
+
+.connectBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+.error {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: rgba(255, 68, 102, 0.1);
+  border: 1px solid rgba(255, 68, 102, 0.2);
+  color: var(--accent-red);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+  animation: fadeIn 0.2s ease;
+}
+
+/* ── Connected Address Button ── */
+
+.addressBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border: 1px solid rgba(0, 255, 163, 0.15);
+  border-radius: 10px;
+  background: rgba(0, 255, 163, 0.04);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.addressBtn:hover {
+  background: rgba(0, 255, 163, 0.07);
+  border-color: rgba(0, 255, 163, 0.25);
+}
+
+.wrongChain {
+  border-color: rgba(255, 170, 0, 0.25) !important;
+  background: rgba(255, 170, 0, 0.05) !important;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  box-shadow: 0 0 8px rgba(0, 255, 163, 0.5);
+  flex-shrink: 0;
+}
+
+.wrongChain .dot {
+  background: var(--accent-amber);
+  box-shadow: 0 0 8px rgba(255, 170, 0, 0.5);
+}
+
+.addrText {
+  color: var(--text-primary);
+}
+
+.chainWarning {
+  color: var(--accent-amber);
+  font-size: 11.5px;
+}
+
+.chevronUp {
+  transform: rotate(180deg);
+}
+
+/* ── Dropdown Menu ── */
+
+.menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 280px;
+  background: #111218;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 6px;
+  z-index: 50;
+  animation: slideUp 0.2s ease;
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.menuHeader {
+  padding: 12px 12px 10px;
+}
+
+.menuLabel {
+  display: block;
+  color: var(--accent-green);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.menuAddr {
+  display: block;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  word-break: break-all;
+  line-height: 1.5;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.menuItem:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+}
+
+.menuIcon {
+  font-size: 14px;
+  opacity: 0.5;
+}
+
+.menuDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: 4px 8px;
+}
+
+/* ── Wrong network banner ── */
+
+.switchBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 2px;
+  border: 1px solid rgba(255, 170, 0, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 170, 0, 0.06);
+  color: var(--accent-amber);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.switchBanner:hover {
+  background: rgba(255, 170, 0, 0.1);
+  border-color: rgba(255, 170, 0, 0.25);
+}
+
+/* ── Network selector ── */
+
+.networkSection {
+  padding: 8px 12px;
+}
+
+.networkLabel {
+  display: block;
+  color: #555;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.networkBtns {
+  display: flex;
+  gap: 6px;
+}
+
+.networkBtn {
+  flex: 1;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+}
+
+.networkBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.networkActive {
+  background: rgba(0, 255, 163, 0.08);
+  border-color: rgba(0, 255, 163, 0.2);
+  color: var(--accent-green);
+}
+
+.networkActive:hover {
+  background: rgba(0, 255, 163, 0.1);
+  border-color: rgba(0, 255, 163, 0.3);
+}
+
+.menuDisconnect {
+  color: var(--accent-red);
+  justify-content: flex-start;
+}
+
+.menuDisconnect:hover {
+  background: rgba(255, 68, 102, 0.08);
+  color: var(--accent-red);
+}
